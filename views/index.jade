@@ -1,0 +1,60 @@
+extends layout
+block content
+	md-subheader
+		h2 ZotCalc
+			span 2017
+
+	md-tabs(md-dynamic-height)
+		md-tab
+			md-tab-label Completed Courses 
+			md-tab-body
+				div.schedule
+					ul.classlist
+						li(ng-repeat="class in completed | orderBy: 'name'", ng-if="class.name != 'elective'") 
+							md-button {{ class.name }}
+								span {{ class.units }} Units
+								md-tooltip {{ class.name }}
+						li(ng-if="countelectives() > 0")
+							md-button Electives
+								span {{ countelectives() }} Units
+								md-tooltip Your elective units
+				div.schedule
+					ul.classlist
+						li(ng-repeat="cat in ge")
+							md-button {{ cat.display }}
+								span {{ cat.courses }} Classes / {{ cat.required }} Required
+
+		md-tab
+			md-tab-label Your Schedule
+			md-tab-body
+				div.schedule
+					div.year(ng-repeat="year in years")
+						md-subheader 
+							h2 Year {{ year.number }}
+						div.terms
+							div.term(ng-repeat="term in year.terms")
+								h4 {{ term.name }}
+								ul.classlist
+									li(ng-repeat="class in term.classes")
+										md-button(ng-click="showclassdialog(class)") {{ class }}
+											md-tooltip {{ getclassbycode(class).title }}
+
+		md-tab
+			md-tab-label Your AP Exams
+			md-tab-body
+				md-grid-list.exams(md-gutter="1em", md-row-height="50px", md-cols="1", md-cols-sm="1", md-cols-md="3", md-cols-lg="3")
+					md-grid-tile.exam(ng-repeat="exam in exams", ng-class="{'selected' : exam.active}", ng-click="exam.active && deselect($index)")
+						md-menu
+							md-button(ng-click="!exam.active && $mdOpenMenu()") {{ exam.name }}
+							md-menu-content
+								md-subheader.md-no-sticky Your Score
+								md-menu-item
+									md-button(ng-click="select($index, 1)") 1
+								md-menu-item
+									md-button(ng-click="select($index, 2)") 2
+								md-menu-item
+									md-button(ng-click="select($index, 3)") 3
+								md-menu-item
+									md-button(ng-click="select($index, 4)") 4
+								md-menu-item
+									md-button(ng-click="select($index, 5)") 5

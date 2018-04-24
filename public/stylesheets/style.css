@@ -1,0 +1,139 @@
+html,
+body {
+  color: #1b3d6d;
+  font-family: "open sans";
+}
+md-subheader {
+  background: #ffd200;
+  height: 50px;
+}
+md-subheader h2 {
+  color: #1b3d6d;
+  margin: 0;
+  padding-top: 8px;
+}
+h2 {
+  display: inline-block;
+}
+h2 span {
+  font-weight: 300;
+}
+.classlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.classlist li {
+  margin: 0;
+  background: #ffd200;
+  margin-bottom: 10px;
+  color: #1b3d6d;
+}
+.classlist li .md-button {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 10px 20px;
+}
+.classlist li span {
+  float: right;
+}
+.schedule .year {
+  display: table;
+  width: 100%;
+}
+.schedule .year .terms {
+  display: table-row;
+}
+.schedule .year .terms .term {
+  width: calc((100% - 30px) / 4);
+  display: table-cell;
+  padding-right: 10px;
+  color: #ffd200;
+  vertical-align: top;
+}
+.schedule .year .terms .term h4 {
+  margin: 0;
+  color: #1b3d6d;
+}
+@media (max-width: 875px) {
+  .schedule .year .terms .term {
+    width: calc((100% - 10px) / 2);
+  }
+}
+.schedule .year .terms .term:last-child {
+  padding-right: 0 !important;
+}
+.schedule .year .terms .term:nth-child(2n) {
+  padding-right: 10px;
+}
+@media (max-width: 875px) {
+  .schedule .year .terms .term:nth-child(2n) {
+    padding-right: 0;
+  }
+}
+.exams {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.exams .exam {
+  padding: 15px 20px;
+  text-align: center;
+  background: #ffd200;
+  color: #1b3d6d;
+  font-size: 15px;
+  cursor: pointer;
+  height: 30px;
+  outline: none;
+}
+.exams .exam .md-button,
+.exams .exam .md-menu {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.exams .exam.selected {
+  background: #f78d2d;
+  color: #f7eb5f;
+}
+.angular-accordion-container {
+  height: 100%;
+}
+.angular-accordion-container .angular-accordion-pane .angular-accordion-header {
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.angular-accordion-container .angular-accordion-pane .angular-accordion-header h2:hover {
+  color: #f78d2d;
+  cursor: pointer;
+}
+.angular-accordion-container .angular-accordion-pane .angular-accordion-pane-content {
+  height: auto !important;
+}
+md-tab-content {
+  padding: 0 20px;
+  width: calc(100% - 40px);
+  margin-top: 20px;
+}
+md-tooltip .md-content {
+  height: auto;
+}
+.demo-dialog-example {
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 7px 8px -4px rgba(0,0,0,0.2), 0 13px 19px 2px rgba(0,0,0,0.14), 0 5px 24px 4px rgba(0,0,0,0.12);
+  width: 500px;
+}
+.demo-dialog-content {
+  padding: 0 15px;
+  width: 100%;
+}
+.demo-dialog-content img {
+  height: 300px;
+  margin: auto;
+}
+.demo-dialog-button {
+  width: 100%;
+}

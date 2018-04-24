@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title= title
+		link(rel="stylesheet", href="/stylesheets/style.css")
+		link(rel="stylesheet", href="/stylesheets/angular-material.min.css")
+		meta(name="viewport", content="width=device-width, initial-scale=1")
+		script(src="/javascripts/angular.js")
+		script(src='/javascripts/angular-animate.js')
+		script(src='/javascripts/angular-aria.js')
+		script(src='/javascripts/angular-messages.js')
+		script(src='/javascripts/angular-material.min.js')
+		script(src='/javascripts/angular-accordion.js')
+
+		script(src="/javascripts/core.js")
+		script(src="/javascripts/data/apexams.js")
+		script(src="/javascripts/data/ge.js")
+		script(src="/javascripts/data/classes.js")
+
+	body(ng-app="ZotCalc", ng-controller="ZotCalc")
+		block content
